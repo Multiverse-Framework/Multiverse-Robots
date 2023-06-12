@@ -1,0 +1,13 @@
+<launch>
+
+    <arg name="namespace" default="ur5e" />
+
+    <group ns="$(arg namespace)">
+        <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+            <arg name="config" value="$(find ur_mujoco)/config/ur5e.yaml" />
+            <arg name="robot" value="$(find ur_description)/urdf/ur.urdf" />
+            <arg name="use_urdf" value="true" />
+        </include>
+    </group>
+
+</launch>
