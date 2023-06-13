@@ -1,10 +1,10 @@
-joint_inits:
-  shoulder_pan_joint: 1
-  shoulder_lift_joint: -1
-  elbow_joint: -1
-  wrist_1_joint: -1
-  wrist_2_joint: 1
-  wrist_3_joint: 1
+# joint_inits:
+#   shoulder_pan_joint: 1
+#   shoulder_lift_joint: -1
+#   elbow_joint: -1
+#   wrist_1_joint: -1
+#   wrist_2_joint: 1
+#   wrist_3_joint: 1
 
 add_odom_joints: false
 
@@ -24,9 +24,9 @@ spawn_and_destroy_objects_rate: 0.0
 root_frame_id: map
 
 send:
-  shoulder_pan_joint: [joint_position]
-  shoulder_lift_joint: [joint_position]
-  elbow_joint: [joint_position]
-  wrist_1_joint: [joint_position]
-  wrist_2_joint: [joint_position]
-  wrist_3_joint: [joint_position]
+  shoulder_pan_joint: [joint_rvalue]
+  shoulder_lift_joint: [joint_rvalue]
+  elbow_joint: [joint_rvalue]
+  wrist_1_joint: [joint_rvalue]
+  wrist_2_joint: [joint_rvalue]
+  wrist_3_joint: [joint_rvalue]

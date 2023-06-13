@@ -5,9 +5,15 @@
     <group ns="$(arg namespace)">
         <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
             <arg name="config" value="$(find ur_mujoco)/config/ur5e.yaml" />
-            <arg name="robot" value="$(find ur_description)/urdf/ur.urdf" />
+            <arg name="robot" value="$(find ur_description)/urdf/ur5e_with_gripper.urdf" />
             <arg name="use_urdf" value="true" />
         </include>
+
+        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+        <include file="$(find ur_control)/launch/ur_traj_control.launch" />
+
+        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ur_description)/cfg/view_robot.rviz" />
     </group>
 
 </launch>
