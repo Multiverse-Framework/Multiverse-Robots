@@ -27,3 +27,8 @@ joint_trajectory_controller:
     wrist_2_joint: { goal: 0.05 }
     wrist_3_joint: { goal: 0.05 }
 
+gripper_controller:
+  type: effort_controllers/GripperActionController
+  joint: gripper_hand_e_finger_1_joint
+  gains:
+    gripper_hand_e_finger_1_joint: { p: 2000, i: 100, d: 50 }

@@ -30,3 +30,5 @@ send:
   wrist_1_joint: [joint_rvalue]
   wrist_2_joint: [joint_rvalue]
   wrist_3_joint: [joint_rvalue]
+  gripper_hand_e_finger_1_joint: [joint_tvalue]
+  gripper_hand_e_finger_2_joint: [joint_tvalue]
