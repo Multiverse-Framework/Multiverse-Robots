@@ -13,7 +13,7 @@
             <arg name="use_urdf" value="true" />
         </include>
 
-        <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+        <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> -->
 
         <include file="$(find ur_control)/launch/ur_traj_control.launch" />
 
