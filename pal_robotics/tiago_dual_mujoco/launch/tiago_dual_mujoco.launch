@@ -1,23 +1,20 @@
 <launch>
 
-    <arg name="namespace" default="tiago_dual" />
     <arg name="world" default="$(find mujoco_sim)/model/world/empty.xml" />
     <arg name="config" default="$(find tiago_dual_mujoco)/config/tiago_dual.yaml" />
     <arg name="rviz_config" default="$(find tiago_dual_description)/rviz_config/rviz_config.rviz" />
 
-    <group ns="$(arg namespace)">
-        <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
-            <arg name="config" value="$(arg config)" />
-            <arg name="robot" value="$(find tiago_dual_description)/urdf/tiago_dual.urdf" />
-            <arg name="world" value="$(arg world)" />
-            <arg name="use_urdf" value="true" />
-        </include>
+    <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+        <arg name="config" value="$(arg config)" />
+        <arg name="robot" value="$(find tiago_dual_description)/urdf/tiago_dual.urdf" />
+        <arg name="world" value="$(arg world)" />
+        <arg name="use_urdf" value="true" />
+    </include>
 
-        <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
-        <include file="$(find tiago_dual_control)/launch/tiago_dual_control.launch" />
+    <include file="$(find tiago_dual_control)/launch/tiago_dual_control.launch" />
 
-        <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" />
-    </group>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" />
 
 </launch>

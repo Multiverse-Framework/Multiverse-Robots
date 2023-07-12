@@ -1,8 +1,9 @@
-add_odom_joints: true
+mujoco:
+  add_odom_joints: true
+  
+  spawn_and_destroy_objects_rate: 0.0
 
-spawn_and_destroy_objects_rate: 0.0
-
-root_frame_id: map
+  root_frame_id: map
 
 multiverse:
   length_unit: m
@@ -15,17 +16,3 @@ multiverse:
   send:
     body: [position, quaternion]
     joint: [joint_rvalue, joint_tvalue]
-
-  receive:
-    tiago_dual: relative_velocity
-
-  publish:
-    tf:
-      port: 7300
-      rate: 60
-
-  subscribe:
-    cmd_vel:
-      port: 7200
-      rate: 60
-      body: tiago_dual
