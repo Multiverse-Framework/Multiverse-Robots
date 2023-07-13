@@ -5,6 +5,8 @@ mujoco:
 
   root_frame_id: map
 
+  disable_gravity: false
+
 multiverse:
   length_unit: m
   angle_unit: rad
@@ -13,6 +15,20 @@ multiverse:
   handedness: rhs
   root_frame_id: map
   
-  send:
-    body: [position, quaternion]
-    joint: [joint_rvalue, joint_tvalue]
+  # send:
+  #   tiago_dual: [position, quaternion]
+    # joint: [joint_rvalue, joint_tvalue]
+
+  receive:
+    tiago_dual: [relative_velocity]
+
+  # publishers:
+  #   tf:
+  #     port: 7300
+  #     rate: 60
+
+  subscribers:
+    cmd_vel:
+      host: tcp://127.0.0.1
+      port: 7200
+      body: tiago_dual
