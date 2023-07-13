@@ -1,0 +1,14 @@
+<launch>
+    
+    <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+        <arg name="config" value="$(find tiago_dual_mujoco)/config/tiago_dual.yaml" />
+        <arg name="world" value="$(find mujoco_sim)/model/world/empty.xml" />
+        <arg name="robot" value="$(find tiago_dual_description)/urdf/tiago_dual.urdf" />
+        <arg name="use_urdf" value="true" />
+    </include>
+
+    <include file="$(find tiago_dual_control)/launch/tiago_dual_control.launch" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tiago_dual_description)/rviz_config/rviz_config.rviz" />
+
+</launch>

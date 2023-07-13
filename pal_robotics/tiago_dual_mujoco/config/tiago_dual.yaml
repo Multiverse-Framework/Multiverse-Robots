@@ -1,11 +1,10 @@
 mujoco:
+  robots: [tiago_dual]
+  pose_init: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
   add_odom_joints: true
-  
   spawn_and_destroy_objects_rate: 0.0
-
   root_frame_id: map
-
-  disable_gravity: false
+  disable_gravity: true
 
 multiverse:
   length_unit: m
@@ -15,20 +14,19 @@ multiverse:
   handedness: rhs
   root_frame_id: map
   
-  # send:
-  #   tiago_dual: [position, quaternion]
-    # joint: [joint_rvalue, joint_tvalue]
+  send:
+    body: [position, quaternion]
+    joint: [joint_rvalue, joint_tvalue]
 
   receive:
     tiago_dual: [relative_velocity]
 
-  # publishers:
-  #   tf:
-  #     port: 7300
-  #     rate: 60
+  publishers:
+    tf:
+      port: 7300
+      rate: 60
 
   subscribers:
     cmd_vel:
-      host: tcp://127.0.0.1
       port: 7200
       body: tiago_dual
