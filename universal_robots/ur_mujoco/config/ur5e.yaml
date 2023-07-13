@@ -13,4 +13,14 @@ mujoco:
 
 multiverse:
   send:
-    ur5e: [position, quaternion, joint_rvalue, joint_tvalue]
+    body: [position, quaternion]
+    joint: [joint_rvalue, joint_tvalue]
+
+  services:
+    query_data:
+      port: 7400
+
+  publishers:
+    tf:
+      port: 7300
+      rate: 60

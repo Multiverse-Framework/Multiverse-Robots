@@ -1,0 +1,14 @@
+<launch>
+
+    <include file="$(find mujoco_sim)/launch/mujoco_sim.launch">
+        <arg name="config" value="$(find ur_mujoco)/config/ur5e.yaml" />
+        <arg name="world" value="$(find mujoco_sim)/model/world/empty.xml" />
+        <arg name="robot" value="$(find ur_description)/urdf/ur5e_with_gripper.urdf" />
+        <arg name="use_urdf" value="true" />
+    </include>
+
+    <include file="$(find ur_control)/launch/ur_traj_control.launch" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ur_description)/cfg/view_robot.rviz" />
+
+</launch>
