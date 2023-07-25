@@ -12,15 +12,20 @@ mujoco:
   root_frame_id: map
 
 multiverse:
+  server_socket_host: "tcp://192.168.75.3"
+  server_socket_port: 7000
+  
   send:
     body: [position, quaternion]
     joint: [joint_rvalue, joint_tvalue]
 
   services:
     query_data:
+      host: "tcp://192.168.75.3"
       port: 7400
 
   publishers:
     tf:
+      host: "tcp://192.168.75.3"
       port: 7300
       rate: 60
