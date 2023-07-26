@@ -11,10 +11,7 @@ mujoco:
 
   root_frame_id: map
 
-multiverse:
-  server_socket_host: "tcp://127.0.0.1"
-  server_socket_port: 7000
-  
+multiverse:  
   send:
     body: [position, quaternion]
     joint: [joint_rvalue, joint_tvalue]

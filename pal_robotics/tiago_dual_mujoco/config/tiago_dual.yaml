@@ -6,10 +6,7 @@ mujoco:
   root_frame_id: map
   disable_gravity: true
 
-multiverse:
-  server_socket_host: "tcp://127.0.0.1"
-  server_socket_port: 7000
-  
+multiverse:  
   length_unit: m
   angle_unit: rad
   force_unit: N
