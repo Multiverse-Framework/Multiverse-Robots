@@ -9,6 +9,4 @@
 
     <include file="$(find tiago_dual_control)/launch/tiago_dual_control.launch" />
 
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tiago_dual_description)/rviz_config/rviz_config.rviz" />
-
 </launch>

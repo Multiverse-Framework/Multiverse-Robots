@@ -5,7 +5,7 @@
         <arg name="world" value="$(find mujoco_sim)/model/world/empty.xml" />
         <arg name="robot" value="$(find ur_description)/urdf/ur5e_with_gripper.urdf" />
         <arg name="use_urdf" value="true" />
-        <arg name="socket_addr" value="tcp://127.0.0.1:7500" />
+        <arg name="socket_port" value="7500" />
     </include>
 
     <include file="$(find ur_control)/launch/ur_traj_control.launch" />
