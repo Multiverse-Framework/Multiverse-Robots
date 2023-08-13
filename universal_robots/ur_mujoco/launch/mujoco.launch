@@ -10,6 +10,4 @@
 
     <include file="$(find ur_control)/launch/ur_traj_control.launch" />
 
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ur_description)/cfg/view_robot.rviz" />
-
 </launch>

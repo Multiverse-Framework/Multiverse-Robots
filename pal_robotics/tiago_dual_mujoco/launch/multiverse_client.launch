@@ -1,9 +1,0 @@
-<launch>
-    
-    <rosparam command="load" file="$(find tiago_dual_mujoco)/config/tiago_dual.yaml" />
-    <node pkg="multiverse_client" type="multiverse_socket_node.py" name="multiverse_socket"
-        output="screen" />
-
-        <node name="rviz" pkg="rviz" type="rviz" args="-d $(find tiago_dual_description)/rviz_config/rviz_config.rviz" />
-
-</launch>

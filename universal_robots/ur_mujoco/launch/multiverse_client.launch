@@ -1,7 +1,9 @@
 <launch>
-    
+
     <rosparam command="load" file="$(find ur_mujoco)/config/ur5e.yaml" />
-    <node pkg="multiverse_client" type="multiverse_socket_node.py" name="multiverse_socket"
+    <node pkg="multiverse_socket" type="multiverse_socket_node.py" name="multiverse_socket"
         output="screen" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ur_description)/cfg/view_robot.rviz" />
 
 </launch>
