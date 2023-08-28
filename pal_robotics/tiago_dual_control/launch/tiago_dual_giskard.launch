@@ -1,6 +1,6 @@
 <launch>
 
-    <node pkg="tiago_dual_control" type="tiago_dual.py" name="giskard" output="screen"/>
+    <node pkg="tiago_dual_control" type="giskard.py" name="giskard" output="screen"/>
 
     <node pkg="giskardpy" type="interactive_marker.py" name="giskard_interactive_marker" output="screen">
         <rosparam param="enable_self_collision">False</rosparam>
