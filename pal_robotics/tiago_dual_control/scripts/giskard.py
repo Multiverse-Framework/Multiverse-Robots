@@ -21,6 +21,7 @@ class WorldWithTiagoDual(WorldConfig):
                  drive_joint_name: str = 'brumbrum'):
         super().__init__()
         self.map_name = map_name
+        self.odom = 'odom'
         self.localization_joint_name = localization_joint_name
         self.odom_link_name = odom_link_name
         self.drive_joint_name = drive_joint_name
@@ -30,10 +31,13 @@ class WorldWithTiagoDual(WorldConfig):
                                               Derivatives.acceleration: np.inf,
                                               Derivatives.jerk: 30})
         self.add_empty_link(self.map_name)
+        self.add_empty_link(self.odom)
+        self.add_fixed_joint(self.map_name,
+                             self.odom)
         self.add_robot_from_parameter_server()
         root_link_name = self.get_root_link_of_group(self.robot_group_name)
         self.add_diff_drive_joint(name=self.drive_joint_name,
-                                               parent_link_name=self.map_name,
+                                               parent_link_name=self.odom,
                                                child_link_name=root_link_name,
                                                translation_limits={
                                                    Derivatives.velocity: 0.4,
