@@ -7,7 +7,7 @@ torso_controller:
   joints:
     - torso_lift_joint
   gains:
-    torso_lift_joint: &pid_gains {p: 2000, i: 100, d: 50}
+    torso_lift_joint: &pid_gains {p: 3000, i: 100, d: 50}
   constraints:
     goal_time: 0.6
     stopped_velocity_tolerance: 5.0 # FIXME: See #8429
