@@ -126,15 +126,15 @@ gripper_right_right_finger:
   gains:
     gripper_right_right_finger_joint: *pid_gains
 
-# gripper_left_left_finger_effort_controller:
-#   type: effort_controllers/JointEffortController
-#   joint: gripper_left_left_finger_joint
-# gripper_left_right_finger_effort_controller:
-#   type: effort_controllers/JointEffortController
-#   joint: gripper_left_right_finger_joint
-# gripper_right_left_finger_effort_controller:
-#   type: effort_controllers/JointEffortController
-#   joint: gripper_right_left_finger_joint
-# gripper_right_right_finger_effort_controller:
-#   type: effort_controllers/JointEffortController
-#   joint: gripper_right_right_finger_joint
+gripper_left_left_finger_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: gripper_left_left_finger_joint
+gripper_left_right_finger_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: gripper_left_right_finger_joint
+gripper_right_left_finger_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: gripper_right_left_finger_joint
+gripper_right_right_finger_effort_controller:
+  type: effort_controllers/JointEffortController
+  joint: gripper_right_right_finger_joint

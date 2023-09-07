@@ -8,9 +8,9 @@
 		head_controller
 		arm_left_controller
 		arm_right_controller
-		gripper_left_left_finger
-		gripper_left_right_finger
-		gripper_right_right_finger
-		gripper_right_left_finger" />
+		gripper_left_left_finger_effort_controller
+		gripper_left_right_finger_effort_controller
+		gripper_right_right_finger_effort_controller
+		gripper_right_left_finger_effort_controller" />
 
 </launch>
