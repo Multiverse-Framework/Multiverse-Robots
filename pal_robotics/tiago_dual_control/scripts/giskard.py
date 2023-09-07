@@ -41,15 +41,32 @@ class WorldWithTiagoDual(WorldConfig):
                                                child_link_name=root_link_name,
                                                translation_limits={
                                                    Derivatives.velocity: 0.4,
-                                                   Derivatives.acceleration: 1,
-                                                   Derivatives.jerk: 5,
+                                                   Derivatives.acceleration: np.inf,
+                                                   Derivatives.jerk: 10,
                                                },
                                                rotation_limits={
-                                                   Derivatives.velocity: 0.2,
-                                                   Derivatives.acceleration: 1,
-                                                   Derivatives.jerk: 5
+                                                   Derivatives.velocity: 0.5,
+                                                   Derivatives.acceleration: np.inf,
+                                                   Derivatives.jerk: 20
                                                },
                                                robot_group_name=self.robot_group_name)
+        left_gripper_tool_frame = 'left_gripper_tool_frame'
+        right_gripper_tool_frame = 'right_gripper_tool_frame'
+        self.add_empty_link(left_gripper_tool_frame)
+        self.add_fixed_joint(parent_link='gripper_left_grasping_frame',
+                             child_link=left_gripper_tool_frame,
+                             homogenous_transform=np.array([[1,0,0,0.07],
+                                                            [0,1,0,0],
+                                                            [0,0,1,0],
+                                                            [0,0,0,1]]))
+        self.add_empty_link(right_gripper_tool_frame)
+        self.add_fixed_joint(parent_link='gripper_right_grasping_frame',
+                             child_link=right_gripper_tool_frame,
+                             homogenous_transform=np.array([[1, 0, 0, 0.07],
+                                                            [0, 1, 0, 0],
+                                                            [0, 0, 1, 0],
+                                                            [0, 0, 0, 1]]))
+
 
 class TiagoMultiverse(RobotInterfaceConfig):
     map_name: str
