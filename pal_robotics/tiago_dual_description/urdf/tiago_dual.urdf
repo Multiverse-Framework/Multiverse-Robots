@@ -529,9 +529,9 @@
     <axis xyz="0.0 0.0 1.0" />
     <parent link="torso_fixed_link" />
     <child link="torso_lift_link" />
-    <limit effort="2000.0" lower="0.0" upper="2.00" velocity="0.07" />
+    <limit effort="2000.0" lower="0.0" upper="0.8" velocity="0.07" />
     <dynamics damping="1000.0" />
-    <safety_controller k_velocity="20.0" k_position="20.0" soft_lower_limit="0.0" soft_upper_limit="2" />
+    <safety_controller k_velocity="20.0" k_position="20.0" soft_lower_limit="0.0" soft_upper_limit="0.8" />
     <calibration rising="0.0" falling="0" />
   </joint>
   <link name="torso_lift_link">
